@@ -1,0 +1,29 @@
+Installation & imports
+Two libraries do the heavy lifting: OpenCV handles camera I/O and image drawing, while DeepFace wraps a pre-trained neural network that classifies emotions.
+# Install once in your terminal: pip install opencv-python deepface tf-keras # Then in your Python file: import cv2 # webcam, drawing, BGR images import numpy as np # array math for smoothing from deepface import DeepFace # pre-trained emotion CNN import time # throttle analysis rate
+
+
+OpenCV (cv2)
+Captures webcam frames as NumPy arrays. Each frame is a 3D array: height × width × 3 (BGR channels).
+DeepFace
+Wraps multiple face analysis models. For emotions it uses a CNN trained on FER-2013 — 35,887 labelled face images.
+
+
+pip install opencv-python deepface tf-keras
+python facial_emotion_recognition.py
+
+What happens when you run it:
+The script opens your webcam, and for every frame it finds faces using the Haar Cascade (detectMultiScale). Each detected face gets cropped and sent to DeepFace every ~0.4 seconds — DeepFace runs it through a CNN trained on 35,000 labelled face images and returns confidence scores for all 7 emotions. Those scores are smoothed across 5 frames (so the bars don't flicker) and drawn as a live bar chart next to each face.
+Keyboard shortcuts while running:
+
+q — quit
+s — save a screenshot as screenshot_<timestamp>.jpg
+r — reset the smoothing history
+
+Key architectural decisions explained:
+The Haar Cascade runs on every frame (it's fast, ~5 ms) while DeepFace is throttled to every 0.4 s because it's slower (~150–250 ms per face). This keeps the bounding box tracking smooth without hammering the CPU.
+Tuning tips if detection is off:
+
+Too many false detections → increase minNeighbors from 5 to 7–8
+Missing faces → decrease scaleFactor from 1.1 to 1.05 (slower but more thorough)
+Very dark room → the equalizeHist call helps, but lighting matters — try a desk lamp pointing at your face
