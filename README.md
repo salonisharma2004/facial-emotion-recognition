@@ -28,13 +28,13 @@ Real-time detection and classification of **7 human emotions** from a live webca
 
 ## ✨ Features
 
-- 🎥 **Live webcam** — real-time processing frame by frame
-- 🔍 **Haar Cascade** face detector — fast, CPU-friendly frontal face detection
-- 🧠 **DeepFace CNN** — pre-trained on FER-2013 (35,887 labelled face images)
-- 📊 **Emotion bar chart** — all 7 scores displayed alongside the face
-- 🔄 **Smoothing** — averages last 5 results to prevent flickering
-- ⚡ **Throttled analysis** — DeepFace runs every 0.4s to keep CPU usage low
-- ⌨️ **Keyboard controls** — quit, screenshot, reset smoothing
+- 🎥 Live webcam — real-time processing frame by frame
+- 🔍 Haar Cascade face detector — fast, CPU-friendly frontal face detection
+- 🧠 DeepFace CNN — pre-trained on FER-2013 (35,887 labelled face images)
+- 📊 Emotion bar chart — all 7 scores displayed alongside the face
+- 🔄 Smoothing — averages last 5 results to prevent flickering
+- ⚡ Throttled analysis — DeepFace runs every 0.4s to keep CPU usage low
+- ⌨️ Keyboard controls — quit, screenshot, reset smoothing
 
 ---
 
