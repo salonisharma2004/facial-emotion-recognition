@@ -177,7 +177,7 @@ pip install -r requirements.txt
 
 ---
 
-## 👩‍💻 Author
+ 👩‍💻 Author
 
 **Saloni Sharma**
 CS Student | Python | ML | Computer Vision
@@ -185,6 +185,6 @@ CS Student | Python | ML | Computer Vision
 
 ---
 
-## 📄 License
+📄 License
 
 This project is licensed under the MIT License — feel free to use and modify it.
