@@ -12,7 +12,7 @@ import time
 import threading
 import base64
 
-app = Flask(__name__)
+app = Flask(name)
 
 # ── Emotion metadata ──────────────────────────────────────────────────────────
 EMOTION_COLORS_BGR = {
